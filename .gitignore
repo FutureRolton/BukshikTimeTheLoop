@@ -1,0 +1,6 @@
+lib/
+*.swp
+*.swo
+bin/
+CMakeFiles/
+CMakeCache.txt
