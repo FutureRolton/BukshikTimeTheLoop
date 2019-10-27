@@ -1,11 +1,12 @@
-#include <stdio.h>
 #include <SFML/Graphics.hpp>
-using namespace sf;
-int main() {
-  RenderWindow window(VideoMode(800, 600), "Bucshin Game - start");
 
-  CircleShape MyCircle(100.f);
-  MyCircle.setFillColor(Color::Blue);
+using namespace sf;
+
+int main() {
+  RenderWindow window(VideoMode(800, 600), "BukshikGame");
+
+  CircleShape shape(200.f);
+  shape.setFillColor(Color::Red);
 
   while(window.isOpen()) {
     Event event;
@@ -14,9 +15,11 @@ int main() {
         window.close();
       }
     }
+
     window.clear();
-    window.draw(MyCircle);
+    window.draw(shape);
     window.display();
   }
+
   return 0;
 }
