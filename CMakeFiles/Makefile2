@@ -6,6 +6,16 @@ default_target: all
 
 .PHONY : default_target
 
+# The main recursive all target
+all:
+
+.PHONY : all
+
+# The main recursive preinstall target
+preinstall:
+
+.PHONY : preinstall
+
 #=============================================================================
 # Special targets provided by cmake.
 
@@ -52,20 +62,10 @@ CMAKE_BINARY_DIR = /home/miisha/Program/BukshikGame
 #=============================================================================
 # Directory level rules for the build root directory
 
-# The main recursive "all" target.
-all: CMakeFiles/BukshikGame.dir/all
-
-.PHONY : all
-
 # The main recursive "clean" target.
 clean: CMakeFiles/BukshikGame.dir/clean
 
 .PHONY : clean
-
-# The main recursive "preinstall" target.
-preinstall:
-
-.PHONY : preinstall
 
 #=============================================================================
 # Target rules for target CMakeFiles/BukshikGame.dir
@@ -76,6 +76,11 @@ CMakeFiles/BukshikGame.dir/all:
 	$(MAKE) -f CMakeFiles/BukshikGame.dir/build.make CMakeFiles/BukshikGame.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/miisha/Program/BukshikGame/CMakeFiles --progress-num=1,2 "Built target BukshikGame"
 .PHONY : CMakeFiles/BukshikGame.dir/all
+
+# Include target in all.
+all: CMakeFiles/BukshikGame.dir/all
+
+.PHONY : all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/BukshikGame.dir/rule: cmake_check_build_system

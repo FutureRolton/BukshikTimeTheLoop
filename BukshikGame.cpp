@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <filesystem>
 
 using namespace sf;
 
@@ -12,7 +13,7 @@ int main() {
 
   Sprite herosprite;
   herosprite.setTexture(herotexture);
-  herosprite.setPosition(50, 25);
+  herosprite.setPosition(10, 15);
 
   while(window.isOpen()) {
     Event event;

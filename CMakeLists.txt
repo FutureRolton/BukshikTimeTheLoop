@@ -6,14 +6,16 @@ set(EXECUTABLE_NAME "BukshikGame")
 
 add_executable(${EXECUTABLE_NAME} BukshikGame.cpp)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "bin/")
-
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
-#set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
+
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
 
 find_package(SFML 2.5 COMPONENTS network audio graphics window system REQUIRED)
 
 target_link_libraries(${EXECUTABLE_NAME} sfml-system sfml-window sfml-graphics sfml-network sfml-audio)
 
 install(TARGETS ${EXECUTABLE_NAME} DESTINATION bin)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "bin/")
