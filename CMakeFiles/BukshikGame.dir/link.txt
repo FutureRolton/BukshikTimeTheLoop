@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/BukshikGame.dir/BukshikGame.cpp.o  -o BukshikGame /usr/lib/libsfml-graphics.so.2.5.1 /usr/lib/libsfml-network.so.2.5.1 /usr/lib/libsfml-audio.so.2.5.1 /usr/lib/libsfml-window.so.2.5.1 /usr/lib/libsfml-system.so.2.5.1 

@@ -1,0 +1,7 @@
+/home/miisha/Program/BukshikGame/CMakeFiles/install/strip.dir
+/home/miisha/Program/BukshikGame/CMakeFiles/install/local.dir
+/home/miisha/Program/BukshikGame/CMakeFiles/edit_cache.dir
+/home/miisha/Program/BukshikGame/CMakeFiles/BukshikGame.dir
+/home/miisha/Program/BukshikGame/CMakeFiles/rebuild_cache.dir
+/home/miisha/Program/BukshikGame/CMakeFiles/list_install_components.dir
+/home/miisha/Program/BukshikGame/CMakeFiles/install.dir
