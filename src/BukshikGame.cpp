@@ -6,7 +6,7 @@ using namespace sf;
 int main() {
   RenderWindow window(VideoMode(800, 600), "BukshikGame");
   Image heroimage;
-  heroimage.loadFromFile("/home/miisha/Program/BukshikGame/sprites/object/user1.png");
+  heroimage.loadFromFile("sprites/object/user1.png");
 
   Texture herotexture;
   herotexture.loadFromImage(heroimage);
