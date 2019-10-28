@@ -12,6 +12,8 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
 
+set(CMAKE_FIND_ROOT_PATH "lib/")
+
 find_package(SFML 2.5 COMPONENTS network audio graphics window system REQUIRED)
 target_link_libraries(${EXECUTABLE_NAME} sfml-system sfml-window sfml-graphics sfml-network sfml-audio)
 
