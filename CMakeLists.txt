@@ -24,6 +24,12 @@ find_package(Boost REQUIRED regex date_time system filesystem thread graph)
 include_directories(${Boost_INCLUDE_DIRS})
 target_link_libraries(${EXECUTABLE_NAME} ${Boost_LIBRARIES})
 
+# FIXME!
+set(nlohmann_json_DIR "lib/json/")
+
+find_package(nlohmann_json 3.2.0 REQUIRED)
+target_link_libraries(${EXECUTABLE_NAME} nlohmann_json::nlohmann_json)
+
 install(TARGETS ${EXECUTABLE_NAME} DESTINATION bin)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "bin/")
