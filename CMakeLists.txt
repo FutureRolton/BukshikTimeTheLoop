@@ -17,8 +17,10 @@ set(CMAKE_FIND_ROOT_PATH "lib/")
 find_package(SFML 2.5 COMPONENTS network audio graphics window system REQUIRED)
 target_link_libraries(${EXECUTABLE_NAME} sfml-system sfml-window sfml-graphics sfml-network sfml-audio)
 
+set(BOOST_ROOT "lib/")
 find_package(Boost 1.7 COMPONENTS program_options REQUIRED)
-target_link_libraries(${EXECUTABLE_NAME} Boost::program_options)
+include_directories(${Boost_INCLUDE_DIR})
+TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME} Boost::program_options)
 
 install(TARGETS ${EXECUTABLE_NAME} DESTINATION bin)
 
