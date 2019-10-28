@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/BukshikGame.dir/BukshikGame.cpp.o"
+  "CMakeFiles/BukshikGame.dir/src/BukshikGame.cpp.o"
   "bin/BukshikGame"
   "bin/BukshikGame.pdb"
 )

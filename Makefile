@@ -169,32 +169,32 @@ BukshikGame/fast:
 	$(MAKE) -f CMakeFiles/BukshikGame.dir/build.make CMakeFiles/BukshikGame.dir/build
 .PHONY : BukshikGame/fast
 
-BukshikGame.o: BukshikGame.cpp.o
+src/BukshikGame.o: src/BukshikGame.cpp.o
 
-.PHONY : BukshikGame.o
+.PHONY : src/BukshikGame.o
 
 # target to build an object file
-BukshikGame.cpp.o:
-	$(MAKE) -f CMakeFiles/BukshikGame.dir/build.make CMakeFiles/BukshikGame.dir/BukshikGame.cpp.o
-.PHONY : BukshikGame.cpp.o
+src/BukshikGame.cpp.o:
+	$(MAKE) -f CMakeFiles/BukshikGame.dir/build.make CMakeFiles/BukshikGame.dir/src/BukshikGame.cpp.o
+.PHONY : src/BukshikGame.cpp.o
 
-BukshikGame.i: BukshikGame.cpp.i
+src/BukshikGame.i: src/BukshikGame.cpp.i
 
-.PHONY : BukshikGame.i
+.PHONY : src/BukshikGame.i
 
 # target to preprocess a source file
-BukshikGame.cpp.i:
-	$(MAKE) -f CMakeFiles/BukshikGame.dir/build.make CMakeFiles/BukshikGame.dir/BukshikGame.cpp.i
-.PHONY : BukshikGame.cpp.i
+src/BukshikGame.cpp.i:
+	$(MAKE) -f CMakeFiles/BukshikGame.dir/build.make CMakeFiles/BukshikGame.dir/src/BukshikGame.cpp.i
+.PHONY : src/BukshikGame.cpp.i
 
-BukshikGame.s: BukshikGame.cpp.s
+src/BukshikGame.s: src/BukshikGame.cpp.s
 
-.PHONY : BukshikGame.s
+.PHONY : src/BukshikGame.s
 
 # target to generate assembly for a file
-BukshikGame.cpp.s:
-	$(MAKE) -f CMakeFiles/BukshikGame.dir/build.make CMakeFiles/BukshikGame.dir/BukshikGame.cpp.s
-.PHONY : BukshikGame.cpp.s
+src/BukshikGame.cpp.s:
+	$(MAKE) -f CMakeFiles/BukshikGame.dir/build.make CMakeFiles/BukshikGame.dir/src/BukshikGame.cpp.s
+.PHONY : src/BukshikGame.cpp.s
 
 # Help Target
 help:
@@ -209,9 +209,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"
 	@echo "... install"
-	@echo "... BukshikGame.o"
-	@echo "... BukshikGame.i"
-	@echo "... BukshikGame.s"
+	@echo "... src/BukshikGame.o"
+	@echo "... src/BukshikGame.i"
+	@echo "... src/BukshikGame.s"
 .PHONY : help
 
 

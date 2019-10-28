@@ -57,31 +57,32 @@ include CMakeFiles/BukshikGame.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/BukshikGame.dir/flags.make
 
-CMakeFiles/BukshikGame.dir/BukshikGame.cpp.o: CMakeFiles/BukshikGame.dir/flags.make
-CMakeFiles/BukshikGame.dir/BukshikGame.cpp.o: BukshikGame.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/miisha/Program/BukshikGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/BukshikGame.dir/BukshikGame.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BukshikGame.dir/BukshikGame.cpp.o -c /home/miisha/Program/BukshikGame/BukshikGame.cpp
+CMakeFiles/BukshikGame.dir/src/BukshikGame.cpp.o: CMakeFiles/BukshikGame.dir/flags.make
+CMakeFiles/BukshikGame.dir/src/BukshikGame.cpp.o: src/BukshikGame.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/miisha/Program/BukshikGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/BukshikGame.dir/src/BukshikGame.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BukshikGame.dir/src/BukshikGame.cpp.o -c /home/miisha/Program/BukshikGame/src/BukshikGame.cpp
 
-CMakeFiles/BukshikGame.dir/BukshikGame.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BukshikGame.dir/BukshikGame.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/miisha/Program/BukshikGame/BukshikGame.cpp > CMakeFiles/BukshikGame.dir/BukshikGame.cpp.i
+CMakeFiles/BukshikGame.dir/src/BukshikGame.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BukshikGame.dir/src/BukshikGame.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/miisha/Program/BukshikGame/src/BukshikGame.cpp > CMakeFiles/BukshikGame.dir/src/BukshikGame.cpp.i
 
-CMakeFiles/BukshikGame.dir/BukshikGame.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BukshikGame.dir/BukshikGame.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/miisha/Program/BukshikGame/BukshikGame.cpp -o CMakeFiles/BukshikGame.dir/BukshikGame.cpp.s
+CMakeFiles/BukshikGame.dir/src/BukshikGame.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BukshikGame.dir/src/BukshikGame.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/miisha/Program/BukshikGame/src/BukshikGame.cpp -o CMakeFiles/BukshikGame.dir/src/BukshikGame.cpp.s
 
 # Object files for target BukshikGame
 BukshikGame_OBJECTS = \
-"CMakeFiles/BukshikGame.dir/BukshikGame.cpp.o"
+"CMakeFiles/BukshikGame.dir/src/BukshikGame.cpp.o"
 
 # External object files for target BukshikGame
 BukshikGame_EXTERNAL_OBJECTS =
 
-bin/BukshikGame: CMakeFiles/BukshikGame.dir/BukshikGame.cpp.o
+bin/BukshikGame: CMakeFiles/BukshikGame.dir/src/BukshikGame.cpp.o
 bin/BukshikGame: CMakeFiles/BukshikGame.dir/build.make
 bin/BukshikGame: /usr/lib/libsfml-graphics.so.2.5.1
 bin/BukshikGame: /usr/lib/libsfml-network.so.2.5.1
 bin/BukshikGame: /usr/lib/libsfml-audio.so.2.5.1
+bin/BukshikGame: /usr/lib64/libboost_program_options.so.1.71.0
 bin/BukshikGame: /usr/lib/libsfml-window.so.2.5.1
 bin/BukshikGame: /usr/lib/libsfml-system.so.2.5.1
 bin/BukshikGame: CMakeFiles/BukshikGame.dir/link.txt

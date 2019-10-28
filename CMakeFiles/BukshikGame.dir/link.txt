@@ -1,1 +1,1 @@
-/usr/bin/c++    -rdynamic CMakeFiles/BukshikGame.dir/BukshikGame.cpp.o  -o bin/BukshikGame /usr/lib/libsfml-graphics.so.2.5.1 /usr/lib/libsfml-network.so.2.5.1 /usr/lib/libsfml-audio.so.2.5.1 /usr/lib/libsfml-window.so.2.5.1 /usr/lib/libsfml-system.so.2.5.1 
+/usr/bin/c++    -rdynamic CMakeFiles/BukshikGame.dir/src/BukshikGame.cpp.o  -o bin/BukshikGame /usr/lib/libsfml-graphics.so.2.5.1 /usr/lib/libsfml-network.so.2.5.1 /usr/lib/libsfml-audio.so.2.5.1 /usr/lib64/libboost_program_options.so.1.71.0 /usr/lib/libsfml-window.so.2.5.1 /usr/lib/libsfml-system.so.2.5.1 
