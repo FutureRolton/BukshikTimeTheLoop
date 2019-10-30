@@ -1,10 +1,15 @@
 #include <SFML/Graphics.hpp>
 #include <filesystem>
+#include <nlohmann/json.hpp>
+#include "settings.hpp"
 
 using namespace sf;
+using nlohmann::json;
 
 int main() {
-  RenderWindow window(VideoMode(800, 600), "BukshikGame");
+  Settings settings;
+  json params = settings.getJsonSettings();
+  RenderWindow window(VideoMode(params["size"][0], params["size"][1]), "BukshikGame");
   Image heroimage;
   heroimage.loadFromFile("sprites/object/user1.png");
 
