@@ -14,9 +14,14 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/lib" ${CMAKE_MODULE_PATH})
 
 set(CMAKE_FIND_ROOT_PATH "lib/")
 
+# SFML
+set(SFML_ROOT "lib/SFML/")
 find_package(SFML 2.5 COMPONENTS network audio graphics window system REQUIRED NO_DEFAULT_PATH)
 target_link_libraries(${EXECUTABLE_NAME} sfml-system sfml-window sfml-graphics sfml-network sfml-audio)
+#target_link_libraries(${EXECUTABLE_NAME} ${SFML_LIBRARIES})
+include_directories(${SFML_INCLUDE_DIR})
 
+# BOOST
 # FIXME!
 set(BOOST_ROOT "lib/boost/")
 set(Boost_DIR "lib/boost/cmake/Boost-1.71.0/")

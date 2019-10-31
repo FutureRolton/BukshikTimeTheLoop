@@ -4,16 +4,13 @@
 using namespace std;
 class Player {
   public:
-    bool setName(string name) {
-
+    // FIXME!
+    bool setName(string inp) {
+      name = inp;
     }
     bool setSkin(string path) {
-
-
     }
     bool setSpeed(int speed) {
-
-
     }
 
   protected:
