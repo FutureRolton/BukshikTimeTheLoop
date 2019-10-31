@@ -4,7 +4,6 @@
 using namespace std;
 class Player {
   public:
-    // FIXME!
     bool setName(string inp) {
       name = inp;
     }
