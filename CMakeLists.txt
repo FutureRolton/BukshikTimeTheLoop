@@ -10,17 +10,18 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 
-set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/lib" ${CMAKE_MODULE_PATH})
 
 set(CMAKE_FIND_ROOT_PATH "lib/")
 
-find_package(SFML 2.5 COMPONENTS network audio graphics window system REQUIRED)
+find_package(SFML 2.5 COMPONENTS network audio graphics window system REQUIRED NO_DEFAULT_PATH)
 target_link_libraries(${EXECUTABLE_NAME} sfml-system sfml-window sfml-graphics sfml-network sfml-audio)
 
 # FIXME!
 set(BOOST_ROOT "lib/boost/")
+set(Boost_DIR "lib/boost/cmake/Boost-1.71.0/")
 
-find_package(Boost REQUIRED regex date_time system filesystem thread graph)
+find_package(Boost REQUIRED COMPONENTS regex date_time system filesystem thread graph NO_DEFAULT_PATH)
 include_directories(${Boost_INCLUDE_DIRS})
 target_link_libraries(${EXECUTABLE_NAME} ${Boost_LIBRARIES})
 
