@@ -15,7 +15,8 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/lib" ${CMAKE_MODULE_PATH})
 set(CMAKE_FIND_ROOT_PATH "lib/")
 
 # SFML
-set(SFML_ROOT "lib/SFML/")
+# FIXME!
+#set(SFML_ROOT "lib/SFML/")
 set(SFML_DIR "lib/SFML/lib/cmake/SFML/")
 find_package(SFML 2.5 COMPONENTS network audio graphics window system REQUIRED NO_DEFAULT_PATH)
 target_link_libraries(${EXECUTABLE_NAME} sfml-system sfml-window sfml-graphics sfml-network sfml-audio)
