@@ -7,6 +7,7 @@ set(EXECUTABLE_NAME "BukshikGame")
 add_executable(${EXECUTABLE_NAME} src/BukshikGame.cpp)
 
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+set(CMAKE_BUILD_TYPE Debug)
 
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 

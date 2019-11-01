@@ -1,26 +1,24 @@
 #include <SFML/Graphics.hpp>
-#include <filesystem>
 #include <nlohmann/json.hpp>
+
 #include "settings.hpp"
+#include "game.hpp"
 
 using namespace sf;
 using nlohmann::json;
 
 int main() {
+  setlocale(LC_ALL, "ru-RU");
   Settings settings;
-  json params = settings.getJsonSettings();
-  RenderWindow window(VideoMode(params["size"][0], params["size"][1]), "BukshikGame");
-  Image heroimage;
-  heroimage.loadFromFile("sprites/object/user1.png");
+  Game game;
+  json params = settings.getJson();
+  RenderWindow window(VideoMode(params["size"][0], params["size"][1]), "BukshikGame", Style::Close);
 
-  Texture herotexture;
-  herotexture.loadFromImage(heroimage);
+  //settings.init( params, window );
 
-  Sprite herosprite;
-  herosprite.setTexture(herotexture);
-  herosprite.setPosition(10, 15);
+  game.startMenu( window, params["size"][1]);
 
-  while(window.isOpen()) {
+  /*while(window.isOpen()) {
     Event event;
 
     while(window.pollEvent(event)) {
@@ -30,8 +28,8 @@ int main() {
     }
 
     window.clear();
-    window.draw(herosprite);
+    //window.draw();
     window.display();
-  }
+  }*/
   return 0;
 }

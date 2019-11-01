@@ -1,14 +1,24 @@
+#include <SFML/Graphics.hpp>
 #include <iomanip>
 #include <string>
 #include <nlohmann/json.hpp>
 #include <fstream>
 
 using namespace std;
+using namespace sf;
 using nlohmann::json;
 
 class Settings {
   public:
-    json getJsonSettings(bool force = false) {
+    void init( json params, RenderWindow &window ) {
+      if( !params.is_null() ) {
+        window.setFramerateLimit( params["fps"] );
+        window.setVerticalSyncEnabled( params["sync"] );
+        window.setPosition( Vector2i( 0, 0 ) );
+        window.setSize( Vector2u( params["size"][0], params["size"][1] ) );
+      }
+    }
+    json getJson(bool force = false) {
       if(force || CURRET_SETTINGS.is_null()) {
         ifstream file( FILE_SETTINGS );
         if(file.is_open()) {
@@ -39,7 +49,7 @@ class Settings {
         return CURRET_SETTINGS;
       }
     }
-    bool setJsonSettings(json jn, bool force = false) {
+    bool setJson(json jn, bool force = false) {
       if(force || CURRET_SETTINGS.is_null()) {
         // write prettified JSON to another file
         ofstream file( FILE_SETTINGS );
@@ -55,7 +65,7 @@ class Settings {
         return CURRET_SETTINGS;
       }
     }
-    json reloadCurretSettings() {
+    json reloadCurret() {
       ifstream file( FILE_SETTINGS );
       json jn;
       if(file.is_open()) {
@@ -77,7 +87,9 @@ class Settings {
     const json DEFAULT_SETTINGS = R"(
       {
         "size": [800, 600],
-        "volume": 60
+        "volume": 60,
+        "fps": 120,
+        "sync": true
       }
     )"_json;
     json CURRET_SETTINGS;
