@@ -1,4 +1,9 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/Audio.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Network.hpp>
+#include <string>
 #include <iostream>
 
 using namespace sf;
@@ -6,7 +11,7 @@ using namespace std;
 
 class Game {
   public:
-    void startMenu(RenderWindow &window, int heightMenu) {
+    void menu(RenderWindow &window, int heightMenu, string backgroundPath = "empty") {
       Font font;
       font.loadFromFile( "fonts/AmaticSC-Regular.ttf" );
       Text text("", font, SIZE_FONT);
@@ -31,7 +36,6 @@ class Game {
       exit.setPosition( -1 * WIDTH_BACKGROUND_MENU, heightMenu - SIZE_FONT - 15);
 
       Clock clock;
-
       while(window.isOpen()) {
         if(clock.getElapsedTime().asSeconds() > 1) {
           if(backgroundMenu.getPosition().x <= 0) {
@@ -58,13 +62,27 @@ class Game {
           } else {
             settings.setFillColor(Color::White);
           }
+          // Exit
           if(IntRect( 0, heightMenu - SIZE_FONT - 15, WIDTH_BACKGROUND_MENU, SIZE_FONT ).contains(Mouse::getPosition(window))) {
             exit.setFillColor(Color::Blue);
           } else {
             exit.setFillColor(Color::White);
           }
+          if(event.type == sf::Event::MouseButtonPressed) {
+            if(event.mouseButton.button == Mouse::Left) {
+              // exit button
+              if(IntRect( 0, heightMenu - SIZE_FONT - 15, WIDTH_BACKGROUND_MENU, SIZE_FONT ).contains(Mouse::getPosition(window))) {
+                window.close();
+              // settings button
+              } else if(IntRect( 0, SIZE_FONT + 15, WIDTH_BACKGROUND_MENU, SIZE_FONT ).contains(Mouse::getPosition(window))) {
+                //this.settings();
+              // start button
+              } else if(IntRect( 0, 15, WIDTH_BACKGROUND_MENU, SIZE_FONT ).contains(Mouse::getPosition(window))) {
+                //this.start();
+              }
+            }
+          }
         }
-        window.clear();
         window.draw( backgroundMenu );
         window.draw( start );
         window.draw( settings );
@@ -72,7 +90,12 @@ class Game {
         window.display();
       }
     }
-    void startSettings() {
+
+    // Draw window in window settings game
+    void settings() {
+    }
+    // start actually game
+    void start(int level) {
 
     }
   protected:

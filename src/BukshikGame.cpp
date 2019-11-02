@@ -16,7 +16,7 @@ int main() {
 
   //settings.init( params, window );
 
-  game.startMenu( window, params["size"][1]);
+  game.menu( window, params["size"][1]);
 
   /*while(window.isOpen()) {
     Event event;
