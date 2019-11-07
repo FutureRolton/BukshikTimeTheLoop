@@ -29,6 +29,10 @@ include_directories(${SFML_INCLUDE_DIR})
 set(BOOST_ROOT "lib/boost/")
 set(Boost_DIR "lib/boost/cmake/Boost-1.71.0/")
 
+set(Boost_USE_STATIC_LIBS OFF )
+set(Boost_USE_MULTITHREADED ON)
+set(Boost_USE_STATIC_RUNTIME OFF)
+
 find_package(Boost REQUIRED COMPONENTS regex date_time system filesystem thread graph NO_DEFAULT_PATH)
 include_directories(${Boost_INCLUDE_DIRS})
 target_link_libraries(${EXECUTABLE_NAME} ${Boost_LIBRARIES})

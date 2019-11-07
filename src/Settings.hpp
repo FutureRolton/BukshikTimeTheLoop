@@ -1,8 +1,7 @@
-#include <SFML/Graphics.hpp>
-#include <iomanip>
-#include <string>
-#include <nlohmann/json.hpp>
-#include <fstream>
+#ifndef SETTINGS_H
+#define SETTINGS_H
+
+#include "allHeaders.hpp"
 
 using namespace std;
 using namespace sf;
@@ -10,7 +9,11 @@ using nlohmann::json;
 
 class Settings {
   public:
-    void init( json params, RenderWindow &window ) {
+    Settings() {
+    }
+    ~Settings() {
+    }
+    void initWindow( json params, RenderWindow &window ) {
       if( !params.is_null() ) {
         window.setFramerateLimit( params["fps"] );
         window.setVerticalSyncEnabled( params["sync"] );
@@ -19,7 +22,7 @@ class Settings {
       }
     }
     json getJson(bool force = false) {
-      if(force || CURRET_SETTINGS.is_null()) {
+      if(force || currentSettings.is_null()) {
         ifstream file( FILE_SETTINGS );
         if(file.is_open()) {
           if(file.peek() == ifstream::traits_type::eof()) {
@@ -27,14 +30,14 @@ class Settings {
             // write empty file
             ofstream emptyFile( FILE_SETTINGS );
             emptyFile << setw(2) << DEFAULT_SETTINGS << endl;
-            CURRET_SETTINGS = DEFAULT_SETTINGS;
+            currentSettings = DEFAULT_SETTINGS;
             return DEFAULT_SETTINGS;
           } else {
             json jn;
             // read a JSON file
             file >> jn;
             file.close();
-            CURRET_SETTINGS = jn;
+            currentSettings = jn;
             return jn;
           }
         } else {
@@ -42,15 +45,15 @@ class Settings {
           // create file
           ofstream file { FILE_SETTINGS };
           file << setw(2) << DEFAULT_SETTINGS << endl;
-          CURRET_SETTINGS = DEFAULT_SETTINGS;
+          currentSettings = DEFAULT_SETTINGS;
           return DEFAULT_SETTINGS;
         }
       } else {
-        return CURRET_SETTINGS;
+        return currentSettings;
       }
     }
     bool setJson(json jn, bool force = false) {
-      if(force || CURRET_SETTINGS.is_null()) {
+      if(force || currentSettings.is_null()) {
         // write prettified JSON to another file
         ofstream file( FILE_SETTINGS );
         if(file.is_open()) {
@@ -62,7 +65,7 @@ class Settings {
           return false;
         }
       } else {
-        return CURRET_SETTINGS;
+        return currentSettings;
       }
     }
     json reloadCurret() {
@@ -71,11 +74,13 @@ class Settings {
       if(file.is_open()) {
         file >> jn;
         file.close();
-        CURRET_SETTINGS = jn;
+        currentSettings = jn;
         return jn;
       } else {
-        return CURRET_SETTINGS;
+        return currentSettings;
       }
+    }
+    void writeSettings() {
     }
   protected:
     const string FILE_SETTINGS = "settings.json";
@@ -92,6 +97,8 @@ class Settings {
         "sync": true
       }
     )"_json;
-    json CURRET_SETTINGS;
+    json currentSettings;
   private:
 };
+
+#endif

@@ -1,8 +1,9 @@
 {
+  "fps": 120,
   "size": [
     800,
     600
   ],
-  "volume": 60,
-  "fps": 120000
+  "sync": true,
+  "volume": 60
 }

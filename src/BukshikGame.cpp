@@ -1,35 +1,38 @@
-#include <SFML/Graphics.hpp>
-#include <nlohmann/json.hpp>
-
-#include "settings.hpp"
-#include "game.hpp"
+#include "allHeaders.hpp"
+#include "Settings.hpp"
+#include "State.hpp"
+#include "Menu.hpp"
 
 using namespace sf;
 using nlohmann::json;
 
 int main() {
+
+  // from unix
   setlocale(LC_ALL, "ru-RU");
+
+  // from windows
+  setlocale(LC_ALL, "Russian");
+
   Settings settings;
-  Game game;
+
   json params = settings.getJson();
-  RenderWindow window(VideoMode(params["size"][0], params["size"][1]), "BukshikGame", Style::Close);
+  // Size
+  //  0 index is width
+  //  1 index is height
+  RenderWindow *window = new RenderWindow( VideoMode( params["size"][0], params["size"][1] ), "BukshikGame", Style::Close );
 
   //settings.init( params, window );
 
-  game.menu( window, params["size"][1]);
+  State state;
+  state.window = window;
 
-  /*while(window.isOpen()) {
-    Event event;
+  state.setWidth( params["size"][0] );
+  state.setHeight( params["size"][1] );
 
-    while(window.pollEvent(event)) {
-      if(event.type == Event::Closed) {
-        window.close();
-      }
-    }
+  State::Menu menu;
 
-    window.clear();
-    //window.draw();
-    window.display();
-  }*/
+  menu.open();
+
   return 0;
 }
