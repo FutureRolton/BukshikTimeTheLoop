@@ -25,7 +25,6 @@ target_link_libraries(${EXECUTABLE_NAME} sfml-system sfml-window sfml-graphics s
 include_directories(${SFML_INCLUDE_DIR})
 
 # BOOST
-# FIXME!
 set(BOOST_ROOT "lib/boost/")
 set(Boost_DIR "lib/boost/cmake/Boost-1.71.0/")
 
@@ -42,6 +41,13 @@ set(nlohmann_json_DIR "lib/json/")
 
 find_package(nlohmann_json 3.2.0 REQUIRED)
 target_link_libraries(${EXECUTABLE_NAME} nlohmann_json::nlohmann_json)
+
+# Include User header
+file(GLOB SOURCES
+  src/include/*.hpp
+  src/include/*.cpp
+)
+add_executable( TARGETS ${SOURCES} )
 
 install(TARGETS ${EXECUTABLE_NAME} DESTINATION bin)
 

@@ -11,25 +11,11 @@ class State {
     class Menu;
     class Game;
 
-    State() {
-      // 800px value on default
-      heightWindow = 800;
-      // 600px value on default
-      widthWindow = 600;
-      // Width menu
-      widthMenu = widthWindow / 2;
-    }
-    virtual ~State() {
-    }
+    State();
+    virtual ~State();
 
-    void setWidth( int width ) {
-      widthWindow = width;
-      widthMenu = width / 2;
-    }
-
-    void setHeight( int height ) {
-      heightWindow = height;
-    }
+    void setWidth( int width );
+    void setHeight( int height );
 
     static RenderWindow *window;
   protected:
@@ -38,9 +24,11 @@ class State {
     static int widthMenu;
   private:
 };
+
+/*
 RenderWindow *State::window;
 int State::heightWindow;
 int State::widthWindow;
 int State::widthMenu;
-
+*/
 #endif
