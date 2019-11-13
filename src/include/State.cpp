@@ -13,6 +13,7 @@ State::State() {
   widthMenu = widthWindow / 2;
 }
 State::~State() {
+  cout << "del State" << endl;
 }
 
 void State::setWidth( int width ) {
