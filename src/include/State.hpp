@@ -25,10 +25,9 @@ class State {
   private:
 };
 
-/*
 RenderWindow *State::window;
 int State::heightWindow;
 int State::widthWindow;
 int State::widthMenu;
-*/
+
 #endif
