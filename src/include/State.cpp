@@ -4,6 +4,11 @@
 using namespace std;
 using namespace sf;
 
+RenderWindow *State::window;
+int State::heightWindow;
+int State::widthWindow;
+int State::widthMenu;
+
 State::State() {
   // 800px value on default
   heightWindow = 800;
