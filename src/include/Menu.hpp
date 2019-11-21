@@ -2,7 +2,7 @@
 #define MENU_H
 
 #include "allHeaders.hpp"
-#include "State.hpp"
+#include "Game.hpp"
 
 using namespace std;
 using namespace sf;
