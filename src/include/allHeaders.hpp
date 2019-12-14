@@ -7,6 +7,7 @@
 #include <iomanip>
 #include <fstream>
 #include <boost/thread/thread.hpp>
+#include <vector>
 
 // json
 //#include <nlohmann/json.hpp>

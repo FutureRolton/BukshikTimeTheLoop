@@ -1,15 +1,15 @@
 #include "allHeaders.hpp"
-#include "State.hpp"
+#include "Game.hpp"
 
 using namespace std;
 using namespace sf;
 
-RenderWindow *State::window;
-int State::heightWindow;
-int State::widthWindow;
-int State::widthMenu;
+RenderWindow *Game::window;
+int Game::heightWindow;
+int Game::widthWindow;
+int Game::widthMenu;
 
-State::State() {
+Game::Game() {
   // 800px value on default
   heightWindow = 800;
   // 600px value on default
@@ -17,14 +17,14 @@ State::State() {
   // Width menu
   widthMenu = widthWindow / 2;
 }
-State::~State() {
-  cout << "del State" << endl;
+Game::~Game() {
+  cout << "del Game" << endl;
 }
 
-void State::setWidth( int width ) {
+void Game::setWidth( int width ) {
   widthWindow = width;
   widthMenu = width / 2;
 }
-void State::setHeight( int height ) {
+void Game::setHeight( int height ) {
   heightWindow = height;
 }

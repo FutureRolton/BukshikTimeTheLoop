@@ -9,7 +9,7 @@ using namespace sf;
 class Game {
   public:
     class Menu;
-    class Game;
+    class Block;
 
     Game();
     virtual ~Game();

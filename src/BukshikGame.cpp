@@ -1,5 +1,4 @@
 #include "allHeaders.hpp"
-//#include "Settings.hpp"
 #include "Game.hpp"
 #include "Menu.hpp"
 
@@ -12,9 +11,6 @@ int main() {
   // from unix
   setlocale(LC_ALL, "ru-RU");
 
-  // from windows
-  setlocale(LC_ALL, "Russian");
-
   //Settings settings;
 
   //json params = settings.getJson();
@@ -25,21 +21,21 @@ int main() {
 
   //settings.init( params, window );
 
-  State state;
-  state.window = window;
+  Game game;
+  game.window = window;
 
-  state.setWidth( 800 );
-  state.setHeight( 600 );
+  game.setWidth( 800 );
+  game.setHeight( 600 );
 
-  State::Menu menu;
+  Game::Menu menu;
 
-  menu.open();
+  menu.animationOpen();
 
   // sleep in 10 seconds
   // portable windows and posix
   boost::this_thread::sleep( boost::posix_time::seconds(10) );
 
-  menu.close();
+  menu.animationClose();
 
   return 0;
 }

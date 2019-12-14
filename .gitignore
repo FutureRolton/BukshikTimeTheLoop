@@ -8,6 +8,7 @@ cmake_install.cmake
 Makefile
 settings.json
 *.ninja
+*.ninja*
 cmake/
 test/
 .vs/

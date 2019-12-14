@@ -7,13 +7,18 @@
 using namespace std;
 using namespace sf;
 
-class State::Menu {
+class Game::Menu {
   public:
     Menu();
     virtual ~Menu();
 
+    void animationOpen();
     void open();
-    void close();
+    void animationClose();
+
+    void setTopButton( const vector<string> arr );
+    void setBottomButton( const vector<string> arr );
+
   protected:
   private:
     void initVarible();
@@ -22,19 +27,17 @@ class State::Menu {
     const int INDENT_TEXT = 15;
     const float ANIMATION_SPEED = 0.4;
 
+    vector<string> topButton    = { "S" };
+    vector<string> bottomButton = { "E" };
+
+    unsigned int countButton        = topButton.size() + bottomButton.size();
+    unsigned int countTopButton     = topButton.size();
+    unsigned int countBottomButton  = bottomButton.size();
+
     Font font;
 
-    Text start;
-    Text settings;
-    Text exit;
+    vector<Text> text;
     RectangleShape bgMenu;
-
-    // Position outside the window
-    int endPositionStart;
-    int endPositionSettings;
-    int endPositionExit;
-    int endPositionBgMenu;
-
 };
 
 #endif
