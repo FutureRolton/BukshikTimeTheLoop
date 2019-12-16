@@ -14,15 +14,14 @@ class Game {
     Game();
     virtual ~Game();
 
-    void setWidth( int width );
-    void setHeight( int height );
+    void setWindow( RenderWindow *w );
 
-    static RenderWindow *window;
   protected:
-    static int heightWindow;
-    static int widthWindow;
-    static int widthMenu;
+    static unsigned int WIDTH_WINDOW;
+    static unsigned int HEIGHT_WINDOW;
+    static RenderWindow *window;
   private:
+    void initSizeWindow();
 };
 
 #endif // GAME_H

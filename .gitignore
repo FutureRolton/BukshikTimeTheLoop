@@ -13,3 +13,4 @@ cmake/
 test/
 .vs/
 out/
+tags

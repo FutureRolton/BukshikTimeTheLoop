@@ -16,27 +16,25 @@ class Game::Menu {
     void open();
     void animationClose();
 
-    void setTopButton( const vector<string> arr );
-    void setBottomButton( const vector<string> arr );
+    void setTopButton    ( const vector<string> arr );
+    void setBottomButton ( const vector<string> arr );
 
   protected:
   private:
     void initVarible();
 
-    const int SIZE_FONT = 40;
-    const int INDENT_TEXT = 15;
+    const int SIZE_FONT         = 40;
+    const int INDENT_TEXT       = 15;
     const float ANIMATION_SPEED = 0.4;
 
-    vector<string> topButton    = { "S" };
-    vector<string> bottomButton = { "E" };
+    vector<string> textTopButton    = { "S" };
+    vector<string> textBottomButton = { "E" };
 
-    unsigned int countButton        = topButton.size() + bottomButton.size();
-    unsigned int countTopButton     = topButton.size();
-    unsigned int countBottomButton  = bottomButton.size();
+    unsigned int countButton       = textTopButton.size() + textBottomButton.size();
+    unsigned int countTopButton    = textTopButton.size();
+    unsigned int countBottomButton = textBottomButton.size();
 
-    Font font;
-
-    vector<Text> text;
+    std::vector<sf::Text> text;
     RectangleShape bgMenu;
 };
 

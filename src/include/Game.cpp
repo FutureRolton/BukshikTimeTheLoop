@@ -5,26 +5,21 @@ using namespace std;
 using namespace sf;
 
 RenderWindow *Game::window;
-int Game::heightWindow;
-int Game::widthWindow;
-int Game::widthMenu;
+unsigned int Game::WIDTH_WINDOW;
+unsigned int Game::HEIGHT_WINDOW;
 
 Game::Game() {
-  // 800px value on default
-  heightWindow = 800;
-  // 600px value on default
-  widthWindow = 600;
-  // Width menu
-  widthMenu = widthWindow / 2;
 }
 Game::~Game() {
   cout << "del Game" << endl;
 }
 
-void Game::setWidth( int width ) {
-  widthWindow = width;
-  widthMenu = width / 2;
+void Game::setWindow( RenderWindow *w ) {
+  window = w;
+  initSizeWindow();
 }
-void Game::setHeight( int height ) {
-  heightWindow = height;
+void Game::initSizeWindow() {
+  //Vector2u windowSize = window->getSize();
+  HEIGHT_WINDOW = 800;
+  WIDTH_WINDOW = 600;
 }

@@ -22,10 +22,7 @@ int main() {
   //settings.init( params, window );
 
   Game game;
-  game.window = window;
-
-  game.setWidth( 800 );
-  game.setHeight( 600 );
+  game.setWindow( window );
 
   Game::Menu menu;
 
